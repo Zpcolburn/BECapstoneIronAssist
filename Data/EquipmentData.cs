@@ -13,7 +13,7 @@ namespace BECapstoneIronAssist.Data
                 Model = "140 AWD",
                 Type = "Motor Grader",
                 Image = "https://s7d2.scene7.com/is/image/Caterpillar/CM20191003-252bf-484fe?$cc-g$&fmt=pjpeg",
-                JobsiteId = 001,
+                JobsiteId = 001, // Nashville Zoo
                 Description = "The Cat 140 Motor Grader gives you more precise grading in a comfortable cab. With a range of technology options, you can improve grading accuracy and save on materials. With extended maintenance intervals, the 140 Motor Grader sets the pace for low operating costs, while maintaining productivity and efficiency."
             },
             new Equipment
@@ -23,7 +23,7 @@ namespace BECapstoneIronAssist.Data
                 Model = "D5",
                 Type = "Dozer",
                 Image = "https://s7d2.scene7.com/is/image/Caterpillar/CM20181218-38347-48970?$cc-g$&fmt=pjpeg",
-                JobsiteId = 002,
+                JobsiteId = 002, // Readyville Fire Station
                 Description = "The Cat D5 succeeds the renowned D6N with superior performance, a fully automatic transmission and the broadest choice of technology features to help you get the most from your dozer. Nimble and responsive, it has power for dozing and finesse for grading."
             },
             new Equipment
