@@ -8,7 +8,7 @@ namespace BECapstoneIronAssist.Data
         {
             new User
             {
-                Id = 01,
+                Id = 1,
                 Uid = "C0wunKp1sIQRM9YR48JnQPlNXt92",
                 FirstName = "Zach",
                 LastName = "Colburn",
@@ -17,7 +17,7 @@ namespace BECapstoneIronAssist.Data
             },
             new User
             {
-                Id = 02,
+                Id = 2,
                 Uid = "D1zpqWr2bJUPO7YP39LkWPqMYu64",
                 FirstName = "Jane",
                 LastName = "Smith",
