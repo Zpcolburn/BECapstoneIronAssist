@@ -10,6 +10,7 @@
         public string Description { get; set; }
         public int JobsiteId { get; set; }
         public Jobsite Jobsite { get; set; }
+        public List<User> Users { get; set; }
 
     }
 }

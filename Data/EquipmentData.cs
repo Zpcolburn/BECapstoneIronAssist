@@ -82,9 +82,9 @@ namespace BECapstoneIronAssist.Data
                 Make = "Cat",
                 Model = "740 EJ",
                 Type = "Articulated Truck",
-                Image = "",
+                Image = "https://www.pon-cat.com/application/files/4115/3552/9792/CM20180618-58323-47147.jpg",
                 JobsiteId = 2,
-                Description = "https://www.pon-cat.com/application/files/4115/3552/9792/CM20180618-58323-47147.jpg"
+                Description = "The Cat® 740 EJ features a world-class cab design, re-engineered using global operator feedback to advance comfort and ease of operation. Enhancements include new controls, transmission-protection features, hoist-assist system, advanced automatic traction control system, stability-assist machine rollover warning system, and a fuel saving ECO mode."
             }
         };
     }

@@ -10,7 +10,7 @@
         public string Priority { get; set; }
         public string Status { get; set; }
         public bool Assign { get; set; }
-        public int EquipmentId { get; set; }
+        public int? EquipmentId { get; set; }
         public Equipment Equipment { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
