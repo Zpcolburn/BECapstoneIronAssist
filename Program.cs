@@ -1,5 +1,9 @@
 using System.Text.Json.Serialization;
 using BECapstoneIronAssist;
+using BECapstoneIronAssist.Endpoints;
+using BECapstoneIronAssist.Interfaces;
+using BECapstoneIronAssist.Repositories;
+using BECapstoneIronAssist.Services;
 using Microsoft.AspNetCore.Http.Json;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,7 +37,12 @@ builder.Services.Configure<JsonOptions>(options =>
     options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
 });
 
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 var app = builder.Build();
+
+app.UseHttpsRedirection();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -43,3 +52,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+UserEndpoints.Map(app);
+
+app.Run();
