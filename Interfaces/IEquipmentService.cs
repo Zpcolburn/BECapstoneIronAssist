@@ -1,0 +1,13 @@
+﻿using BECapstoneIronAssist.Models;
+
+namespace BECapstoneIronAssist.Interfaces
+{
+    public interface IEquipmentService
+    {
+        Task <List<Equipment>> GetAllEquipmentAsync();
+        Task <Equipment> AddEquipmentAsync(Equipment newEquipment);
+        Task <Equipment> UpdateSingleEquipmentAsync(int id, Equipment newEquipment);
+        Task <Equipment> DeleteSingleEquipmentAsync(int id);
+
+    }
+}
