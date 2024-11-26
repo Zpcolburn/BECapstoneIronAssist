@@ -41,6 +41,8 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IEquipmentService, EquipmentService>();
 builder.Services.AddScoped<IEquipmentRepository, EquipmentRepository>();
+builder.Services.AddScoped<IJobsiteService, JobsiteService>();
+builder.Services.AddScoped<IJobsiteRepository, JobsiteRepository>();
 
 var app = builder.Build();
 
@@ -57,5 +59,6 @@ app.UseHttpsRedirection();
 
 UserEndpoints.Map(app);
 EquipmentEndpoints.Map(app);
+JobsiteEndpoints.Map(app);
 
 app.Run();
