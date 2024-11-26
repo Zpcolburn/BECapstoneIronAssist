@@ -21,7 +21,7 @@ namespace BECapstoneIronAssist.Services
             return await _userRepository.GetAllUsersAsync();
         }
 
-        public async Task<User> GetSingleUserAsync(int id)
+        public async Task<User?> GetSingleUserAsync(int id)
         {
             return await _userRepository.GetSingleUserAsync(id);
         }
@@ -35,9 +35,9 @@ namespace BECapstoneIronAssist.Services
             return await _userRepository.UpdateSingleUserAsync(id, updateUser);
         }
 
-        public Task<User> DeleteUserAsync(int id)
+        public  async Task<User> DeleteUserAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _userRepository.DeleteUserAsync (id);
         }
     }
 }
