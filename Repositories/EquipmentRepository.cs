@@ -24,9 +24,11 @@ namespace BECapstoneIronAssist.Repositories
         {
             return await dbContext.Equipment.FirstOrDefaultAsync(u => u.Id == id);
         }
-        public Task<Equipment> AddEquipmentAsync(Equipment newEquipment)
+        public async Task<Equipment> AddEquipmentAsync(Equipment newEquipment)
         {
-            throw new NotImplementedException();
+            await dbContext.Equipment.AddAsync(newEquipment);
+            await dbContext.SaveChangesAsync();
+            return newEquipment;
         }
         public Task<Equipment> UpdateSingleEquipmentAsync(int id, Equipment newEquipment)
         {

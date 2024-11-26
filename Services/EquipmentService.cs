@@ -7,7 +7,10 @@ namespace BECapstoneIronAssist.Services
     public class EquipmentService :IEquipmentService
     {
         private readonly IEquipmentRepository _equipmentRepository;
-
+        public EquipmentService(IEquipmentRepository equipmentRepository)
+        {
+            _equipmentRepository = equipmentRepository;
+        }
         public async Task<List<Equipment>> GetAllEquipmentAsync()
         {
             return await _equipmentRepository.GetAllEquipmentAsync();
@@ -18,14 +21,9 @@ namespace BECapstoneIronAssist.Services
             return await _equipmentRepository.GetSingleEquipmentAsync(id);
         }
 
-        public EquipmentService(IEquipmentRepository equipmentRepository)
+        public async Task<Equipment> AddEquipmentAsync(Equipment newEquipment)
         {
-            _equipmentRepository = equipmentRepository;
-        }
-
-        public Task<Equipment> AddEquipmentAsync(Equipment newEquipment)
-        {
-            throw new NotImplementedException();
+            return await _equipmentRepository.AddEquipmentAsync(newEquipment);
         }
 
         public Task<Equipment> UpdateSingleEquipmentAsync(int id, Equipment newEquipment)
