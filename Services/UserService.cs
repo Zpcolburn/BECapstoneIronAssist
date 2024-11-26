@@ -12,24 +12,32 @@ namespace BECapstoneIronAssist.Services
             _userRepository = userRepository;
         }
 
-        public Task<User> AddUserAsync(User newUser)
+        public async Task<User?> CheckUserAsync(string uid)
         {
-            throw new NotImplementedException();
+            return await _userRepository.CheckUserAsync(uid);
         }
-
-        public Task<User> DeleteUserAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<List<User>> GetAllUsersAsync()
         {
             return await _userRepository.GetAllUsersAsync();
         }
 
-        public Task<User> UpdateSingleUserAsync(int id, User newUser)
+        public async Task<User?> GetSingleUserAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _userRepository.GetSingleUserAsync(id);
+        }
+        public async Task<User> AddUserAsync(User newUser)
+        {
+            return await _userRepository.AddUserAsync(newUser);
+        }
+
+        public  async Task<User> UpdateSingleUserAsync(int id, User updateUser)
+        {
+            return await _userRepository.UpdateSingleUserAsync(id, updateUser);
+        }
+
+        public  async Task<User> DeleteUserAsync(int id)
+        {
+            return await _userRepository.DeleteUserAsync (id);
         }
     }
 }

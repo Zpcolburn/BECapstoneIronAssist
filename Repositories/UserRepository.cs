@@ -13,14 +13,9 @@ namespace BECapstoneIronAssist.Repositories
             dbContext = context;
         }
 
-        public Task<User> AddUserAsync(User newUser)
+        public async Task<User?> CheckUserAsync(string uid)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<User> DeleteUserAsync(int id)
-        {
-            throw new NotImplementedException();
+            return await dbContext.Users.FirstOrDefaultAsync(u => u.Uid == uid);
         }
 
         // Get All Users
@@ -28,8 +23,36 @@ namespace BECapstoneIronAssist.Repositories
         {
             return await dbContext.Users.ToListAsync();
         }
+        // Get single User
+        public async Task<User?> GetSingleUserAsync(int id)
+        {
+            return await dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
+        }
+        // Post(add) new User
+        public async Task<User> AddUserAsync(User newUser) 
+        {
+           await dbContext.Users.AddAsync(newUser);
+            await dbContext.SaveChangesAsync();
+           return newUser;
+        }
+        public async Task<User> UpdateSingleUserAsync(int id, User updateUser)
+        {
+            var userToUpdate = await dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
+            
+            if (userToUpdate == null) 
+            {
+                return null;
+            }
+            userToUpdate.FirstName = updateUser.FirstName;
+            userToUpdate.LastName = updateUser.LastName;
+            userToUpdate.Email = updateUser.Email;
+            userToUpdate.Role = updateUser.Role;
 
-        public Task<User> UpdateSingleUserAsync(int id, User newUser)
+            await dbContext.SaveChangesAsync();
+            return userToUpdate;
+
+        }
+        public Task<User> DeleteUserAsync(int id)
         {
             throw new NotImplementedException();
         }
