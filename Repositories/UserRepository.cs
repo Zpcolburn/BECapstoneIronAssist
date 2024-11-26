@@ -23,11 +23,13 @@ namespace BECapstoneIronAssist.Repositories
         {
             return await dbContext.Users.ToListAsync();
         }
+
         // Get single User
         public async Task<User?> GetSingleUserAsync(int id)
         {
             return await dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
         }
+
         // Post(add) new User
         public async Task<User> AddUserAsync(User newUser) 
         {
