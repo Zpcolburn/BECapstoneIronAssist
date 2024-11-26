@@ -39,6 +39,8 @@ builder.Services.Configure<JsonOptions>(options =>
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IEquipmentService, EquipmentService>();
+builder.Services.AddScoped<IEquipmentRepository, EquipmentRepository>();
 
 var app = builder.Build();
 
@@ -54,5 +56,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 UserEndpoints.Map(app);
+EquipmentEndpoints.Map(app);
 
 app.Run();
