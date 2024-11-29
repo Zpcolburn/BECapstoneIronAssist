@@ -32,6 +32,13 @@ namespace BECapstoneIronAssist.Endpoints
                 var newEquipment = await equipmentService.AddEquipmentAsync(equipment);
                 return Results.Created($"/equipment/{newEquipment.Id}", newEquipment);
             });
+
+            // Update Single Equipment
+            app.MapPut("/equipment/{id}", async (IEquipmentService equipmentService, int id, Equipment updatedEquipment) =>
+            {
+                var equipmentToUpdate = await equipmentService.UpdateSingleEquipmentAsync(id, updatedEquipment);
+                return Results.Ok(equipmentToUpdate);
+            });
         }
     }
 }

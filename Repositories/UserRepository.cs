@@ -37,6 +37,8 @@ namespace BECapstoneIronAssist.Repositories
             await dbContext.SaveChangesAsync();
            return newUser;
         }
+
+        // Put(Edit) User
         public async Task<User> UpdateSingleUserAsync(int id, User updateUser)
         {
             var userToUpdate = await dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);

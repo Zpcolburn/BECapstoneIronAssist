@@ -26,9 +26,9 @@ namespace BECapstoneIronAssist.Services
             return await _equipmentRepository.AddEquipmentAsync(newEquipment);
         }
 
-        public Task<Equipment> UpdateSingleEquipmentAsync(int id, Equipment newEquipment)
+        public async Task<Equipment> UpdateSingleEquipmentAsync(int id, Equipment updateEquipment)
         {
-            throw new NotImplementedException();
+            return await _equipmentRepository.UpdateSingleEquipmentAsync(id, updateEquipment);
         }
 
         public Task<Equipment> DeleteSingleEquipmentAsync(int id)
