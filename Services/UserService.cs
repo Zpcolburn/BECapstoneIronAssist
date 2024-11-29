@@ -34,10 +34,5 @@ namespace BECapstoneIronAssist.Services
         {
             return await _userRepository.UpdateSingleUserAsync(id, updateUser);
         }
-
-        public  async Task<User> DeleteUserAsync(int id)
-        {
-            return await _userRepository.DeleteUserAsync (id);
-        }
     }
 }

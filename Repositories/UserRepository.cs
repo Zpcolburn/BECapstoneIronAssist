@@ -12,7 +12,7 @@ namespace BECapstoneIronAssist.Repositories
         {
             dbContext = context;
         }
-
+        // Check User
         public async Task<User?> CheckUserAsync(string uid)
         {
             return await dbContext.Users.FirstOrDefaultAsync(u => u.Uid == uid);
@@ -52,11 +52,6 @@ namespace BECapstoneIronAssist.Repositories
 
             await dbContext.SaveChangesAsync();
             return userToUpdate;
-
-        }
-        public Task<User> DeleteUserAsync(int id)
-        {
-            throw new NotImplementedException();
         }
     }
 }
