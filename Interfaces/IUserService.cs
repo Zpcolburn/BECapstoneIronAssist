@@ -8,7 +8,6 @@ namespace BECapstoneIronAssist.Interfaces
         Task <List<User>> GetAllUsersAsync();
         Task <User> GetSingleUserAsync(int id);
         Task <User> AddUserAsync(User newUser);
-        Task <User> UpdateSingleUserAsync(int id, User newUser);
-        Task <User> DeleteUserAsync(int id);
+        Task<User> UpdateSingleUserAsync(int id, User newUser);
     }
 }
