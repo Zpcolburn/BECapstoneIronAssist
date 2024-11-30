@@ -39,6 +39,12 @@ namespace BECapstoneIronAssist.Endpoints
                 var jobsiteToUpdate = await jobsiteService.UpdateSingleJobsiteAsync(id, updatedJobsite);
                 return Results.Ok(jobsiteToUpdate);
             });
+
+            // Delete Single Jobsite 
+            app.MapDelete("/jobsite{id}", async (IJobsiteService jobsiteService, int id) =>
+            {
+                return await jobsiteService.DeleteSingleJobsiteAsync(id);
+            });
         }
     }
 }
