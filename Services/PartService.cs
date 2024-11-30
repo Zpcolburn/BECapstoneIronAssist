@@ -1,20 +1,20 @@
 ﻿using BECapstoneIronAssist.Interfaces;
 using BECapstoneIronAssist.Models;
-using Microsoft.EntityFrameworkCore;
+using BECapstoneIronAssist.Repositories;
 
-namespace BECapstoneIronAssist.Repositories
+namespace BECapstoneIronAssist.Services
 {
-    public class PartRepository : IPartRepository
+    public class PartService : IPartService
     {
-        private readonly BECapstoneIronAssistDbContext dbContext;
+        private readonly IPartRepository _partRepository;
 
-        public PartRepository(BECapstoneIronAssistDbContext context)
+        public PartService(IPartRepository partRepository)
         {
-            dbContext = context;
+            _partRepository = partRepository;
         }
         public async Task<List<Part>> GetAllPartAsync()
         {
-            return await dbContext.Parts.ToListAsync();
+            return await _partRepository.GetAllPartAsync();
         }
         public Task<Part> GetSinglePartAsync(int id)
         {
