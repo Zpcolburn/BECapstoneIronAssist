@@ -1,5 +1,6 @@
 ﻿using BECapstoneIronAssist.Interfaces;
 using BECapstoneIronAssist.Models;
+using BECapstoneIronAssist.Repositories;
 
 namespace BECapstoneIronAssist.Services
 {
@@ -21,9 +22,9 @@ namespace BECapstoneIronAssist.Services
             return await _jobsiteRepository.GetSingleJobsiteAsync(id);
         }
 
-        public Task<Jobsite> AddJobsiteAsync(Jobsite newJobsite)
+        public async Task<Jobsite> AddJobsiteAsync(Jobsite newJobsite)
         {
-            throw new NotImplementedException();
+            return await _jobsiteRepository.AddJobsiteAsync(newJobsite);
         }
 
         public Task<Jobsite> DeleteSingleJobsiteAsync(int id)
