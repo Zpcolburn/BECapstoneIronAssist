@@ -39,6 +39,12 @@ namespace BECapstoneIronAssist.Endpoints
                 var equipmentToUpdate = await equipmentService.UpdateSingleEquipmentAsync(id, updatedEquipment);
                 return Results.Ok(equipmentToUpdate);
             });
+
+            // Delete Single Equipment 
+            app.MapDelete("/equipment{id}", async (IEquipmentService equipmentService, int id) =>
+            {
+                return await equipmentService.DeleteSingleEquipmentAsync(id);
+            });
         }
     }
 }

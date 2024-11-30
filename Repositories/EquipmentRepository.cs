@@ -48,9 +48,17 @@ namespace BECapstoneIronAssist.Repositories
             return equipmentToUpdate;
         }
 
-        public Task<Equipment> DeleteSingleEquipmentAsync(int id)
+        public async Task<Equipment> DeleteSingleEquipmentAsync(int id)
         {
-            throw new NotImplementedException();
+            var equipmentToDelete = await dbContext.Equipment.FirstOrDefaultAsync(e => e.Id == id);
+
+            if (equipmentToDelete == null)
+            {
+                return null;
+            }
+            dbContext.Equipment.Remove(equipmentToDelete);
+            await dbContext.SaveChangesAsync();
+            return equipmentToDelete;
         }
 
     }
