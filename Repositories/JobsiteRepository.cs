@@ -46,9 +46,17 @@ namespace BECapstoneIronAssist.Repositories
             return jobsiteToUpdate;
         }
 
-        public Task<Jobsite> DeleteSingleJobsiteAsync(int id)
+        public async Task<Jobsite> DeleteSingleJobsiteAsync(int id)
         {
-            throw new NotImplementedException();
+            var jobsiteToDelete = await dbContext.Jobsites.FirstOrDefaultAsync(j => j.Id == id);
+
+            if (jobsiteToDelete == null)
+            {
+                return null;
+            }
+            dbContext.Jobsites.Remove(jobsiteToDelete);
+            await dbContext.SaveChangesAsync();
+            return jobsiteToDelete;
         }
     }
 }

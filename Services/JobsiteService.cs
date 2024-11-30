@@ -31,9 +31,9 @@ namespace BECapstoneIronAssist.Services
         {
             return await _jobsiteRepository.UpdateSingleJobsiteAsync(id, updateJobsite);
         }
-        public Task<Jobsite> DeleteSingleJobsiteAsync(int id)
+        public async Task<Jobsite> DeleteSingleJobsiteAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _jobsiteRepository.DeleteSingleJobsiteAsync(id);
         }
     }
 }
