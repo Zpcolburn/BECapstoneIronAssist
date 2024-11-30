@@ -14,6 +14,17 @@ namespace BECapstoneIronAssist.Endpoints
             {
                 return await partService.GetAllPartAsync();
             });
+
+            // Get Single Part by Id
+            app.MapGet("/part/{id}", async (IPartService partService, int id) =>
+            {
+                var part = await partService.GetSinglePartAsync(id);
+                if (part == null)
+                {
+                    return Results.NotFound("Part not found");
+                }
+                return Results.Ok(part);
+            });
         }
     }
 }

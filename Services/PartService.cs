@@ -16,9 +16,9 @@ namespace BECapstoneIronAssist.Services
         {
             return await _partRepository.GetAllPartAsync();
         }
-        public Task<Part> GetSinglePartAsync(int id)
+        public async Task<Part> GetSinglePartAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _partRepository.GetSinglePartAsync(id);
         }
         public Task<Part> AddPartAsync(Part newPart)
         {
