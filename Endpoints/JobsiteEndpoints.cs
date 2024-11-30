@@ -25,6 +25,13 @@ namespace BECapstoneIronAssist.Endpoints
                 }
                 return Results.Ok(jobsite);
             });
+
+            // Post New Jobsite
+            app.MapPost("/jobsite", async (IJobsiteService jobsiteService, Jobsite jobsite) =>
+            {
+                var newJobsite = await jobsiteService.AddJobsiteAsync(jobsite);
+                return Results.Created($"/jobsite/{newJobsite.Id}", newJobsite);
+            });
         }
     }
 }

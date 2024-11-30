@@ -23,9 +23,11 @@ namespace BECapstoneIronAssist.Repositories
             return await dbContext.Jobsites.FirstOrDefaultAsync(j => j.Id == id);
         }
 
-        public Task<Jobsite> AddJobsiteAsync(Jobsite newJobsite)
+        public async Task<Jobsite> AddJobsiteAsync(Jobsite newJobsite)
         {
-            throw new NotImplementedException();
+            await dbContext.Jobsites.AddAsync(newJobsite);
+            await dbContext.SaveChangesAsync();
+            return newJobsite;
         }
 
         public Task<Jobsite> UpdateSingleJobsiteAsync(int id, Jobsite newJobsite)
