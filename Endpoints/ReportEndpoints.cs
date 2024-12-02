@@ -25,6 +25,12 @@ namespace BECapstoneIronAssist.Endpoints
                 }
                 return Results.Ok(report);
             });
+
+            //Post(Create) New Report
+            app.MapPost("/report", async (IReportService reportService, Report newReport) =>
+            {
+                return await reportService.AddReportAsync(newReport);
+            });
         }
     }
 }

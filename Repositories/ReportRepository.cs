@@ -26,9 +26,11 @@ namespace BECapstoneIronAssist.Repositories
         }
 
         // Add New Report
-        public Task<Report> AddReportAsync(Report newReport)
+        public async Task<Report> AddReportAsync(Report newReport)
         {
-            throw new NotImplementedException();
+            await dbContext.AddAsync(newReport);
+            await dbContext.SaveChangesAsync();
+            return newReport;
         }
 
         // Update Single Report
