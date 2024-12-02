@@ -47,6 +47,9 @@ builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddScoped<IReportRepository, ReportRepository>();
 builder.Services.AddScoped<IPartService, PartService>();
 builder.Services.AddScoped<IPartRepository, PartRepository>();
+builder.Services.AddScoped<IEquipmentPartService, EquipmentPartService>();
+builder.Services.AddScoped<IEquipmentPartRepository, EquipmentPartRepository>();
+
 
 var app = builder.Build();
 
@@ -66,5 +69,6 @@ EquipmentEndpoints.Map(app);
 JobsiteEndpoints.Map(app);
 ReportEndpoints.Map(app);
 PartEndpoints.Map(app);
+EquipmentPartEndpoints.Map(app);
 
 app.Run();
