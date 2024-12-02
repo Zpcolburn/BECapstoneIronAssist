@@ -22,12 +22,12 @@ namespace BECapstoneIronAssist.Services
             return await _reportRepository.GetSingleReportAsync(id);
         }
 
-        public Task<Report> UpdateSingleReportAsync(int id, Report newReport)
+        public async Task<Report> AddReportAsync(Report newReport)
         {
-            throw new NotImplementedException();
+            return await _reportRepository.AddReportAsync(newReport);
         }
 
-        public Task<Report> AddReportAsync(Report newReport)
+        public Task<Report> UpdateSingleReportAsync(int id, Report newReport)
         {
             throw new NotImplementedException();
         }
@@ -36,5 +36,6 @@ namespace BECapstoneIronAssist.Services
         {
             throw new NotImplementedException();
         }
+
     }
 }
