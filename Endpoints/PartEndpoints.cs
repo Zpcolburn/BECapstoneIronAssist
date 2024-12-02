@@ -25,6 +25,13 @@ namespace BECapstoneIronAssist.Endpoints
                 }
                 return Results.Ok(part);
             });
+
+            // Post(Add) New Part
+            app.MapPost("/part", async (IPartService partService, Part part) =>
+            {
+                var newPart = await partService.AddPartAsync(part);
+                return Results.Created($"/part/{newPart.Id}", newPart);
+            });
         }
     }
 }
