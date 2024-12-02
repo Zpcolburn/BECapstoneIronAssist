@@ -27,9 +27,9 @@ namespace BECapstoneIronAssist.Services
             return await _reportRepository.AddReportAsync(newReport);
         }
 
-        public Task<Report> UpdateSingleReportAsync(int id, Report newReport)
+        public async Task<Report> UpdateSingleReportAsync(int id, Report updateReport)
         {
-            throw new NotImplementedException();
+            return await _reportRepository.UpdateSingleReportAsync(id, updateReport);
         }
 
         public Task<Report> DeleteSingleReportAsync(int id)

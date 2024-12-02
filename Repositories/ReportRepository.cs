@@ -34,9 +34,21 @@ namespace BECapstoneIronAssist.Repositories
         }
 
         // Update Single Report
-        public Task<Report> UpdateSingleReportAsync(int id, Report newReport)
+        public async Task<Report> UpdateSingleReportAsync(int id, Report updateReport)
         {
-            throw new NotImplementedException();
+            var reportToUpdate = await dbContext.Reports.FirstOrDefaultAsync(r =>r.Id == id);
+            if (reportToUpdate == null)
+            {
+                return null;
+            }
+            reportToUpdate.EquipmentId = updateReport.EquipmentId;
+            reportToUpdate.JobsiteId = updateReport.JobsiteId;
+            reportToUpdate.Image = updateReport.Image;
+            reportToUpdate.Description = updateReport.Description;
+            reportToUpdate.IsPublic = updateReport.IsPublic;
+
+            await dbContext.SaveChangesAsync();
+            return reportToUpdate;
         }
 
         // Delete Single Report
