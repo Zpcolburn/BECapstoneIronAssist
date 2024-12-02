@@ -32,9 +32,9 @@ namespace BECapstoneIronAssist.Services
             return await _reportRepository.UpdateSingleReportAsync(id, updateReport);
         }
 
-        public Task<Report> DeleteSingleReportAsync(int id)
+        public async Task<Report> DeleteSingleReportAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _reportRepository.DeleteSingleReportAsync(id);
         }
 
     }
