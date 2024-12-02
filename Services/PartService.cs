@@ -28,9 +28,9 @@ namespace BECapstoneIronAssist.Services
         {
             return await _partRepository.UpdateSinglePartAsync(id, updatePart);
         }
-        public Task<Part> DeleteSinglePartAsync(int id)
+        public async Task<Part> DeleteSinglePartAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _partRepository.DeleteSinglePartAsync(id);
         }
     }
 }
