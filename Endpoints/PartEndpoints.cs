@@ -38,6 +38,12 @@ namespace BECapstoneIronAssist.Endpoints
             {
                 return await partService.UpdateSinglePartAsync(id, updatedPart);
             });
+
+            // Delete Part
+            app.MapDelete("part/{id}", async (IPartService partService, int id) =>
+            {
+                return await partService.DeleteSinglePartAsync(id);
+            });
         }
     }
 }

@@ -44,9 +44,17 @@ namespace BECapstoneIronAssist.Repositories
             await dbContext.SaveChangesAsync();
             return partToUpdate;
         }
-        public Task<Part> DeleteSinglePartAsync(int id)
+        public async Task<Part> DeleteSinglePartAsync(int id)
         {
-            throw new NotImplementedException();
+            var partToDelete = await dbContext.Parts.FirstOrDefaultAsync(p => p.Id == id);
+            
+            if (partToDelete == null)
+            {
+                return null;
+            }
+            dbContext.Parts.Remove(partToDelete);
+            await dbContext.SaveChangesAsync();
+            return partToDelete;
         }
     }
 }
