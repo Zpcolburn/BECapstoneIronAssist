@@ -52,9 +52,16 @@ namespace BECapstoneIronAssist.Repositories
         }
 
         // Delete Single Report
-        public Task<Report> DeleteSingleReportAsync(int id)
+        public async Task<Report> DeleteSingleReportAsync(int id)
         {
-            throw new NotImplementedException();
+            var reportToDelete = await dbContext.Reports.FirstOrDefaultAsync(r =>r.Id == id);
+            if(reportToDelete == null)
+            {
+                return null;
+            }
+            dbContext.Reports.Remove(reportToDelete);
+            await dbContext.SaveChangesAsync();
+            return reportToDelete;
         }
     }
 }

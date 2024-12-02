@@ -37,6 +37,12 @@ namespace BECapstoneIronAssist.Endpoints
             {
                 return await reportService.UpdateSingleReportAsync(id, updatedReport);
             });
+
+            // Delete Report
+            app.MapDelete("report/{id}", async (IReportService reportService, int id) =>
+            {
+                return await reportService.DeleteSingleReportAsync(id);
+            });
         }
     }
 }
