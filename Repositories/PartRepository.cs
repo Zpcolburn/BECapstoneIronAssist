@@ -22,13 +22,27 @@ namespace BECapstoneIronAssist.Repositories
         }
         public async Task<Part> AddPartAsync(Part newPart)
         {
-             await dbContext.AddAsync(newPart);
-             await dbContext.SaveChangesAsync();
-             return newPart;
+            await dbContext.AddAsync(newPart);
+            await dbContext.SaveChangesAsync();
+            return newPart;
         }
-        public Task<Part> UpdateSinglePartAsync(int id, Part updatePart)
+        public async Task<Part> UpdateSinglePartAsync(int id, Part updatePart)
         {
-            throw new NotImplementedException();
+            var partToUpdate = await dbContext.Parts.FirstOrDefaultAsync(p => p.Id == id);
+            if (partToUpdate == null)
+            {
+                return null;
+            }
+            partToUpdate.Name = updatePart.Name;
+            partToUpdate.Description = updatePart.Description;
+            partToUpdate.PartNumber = updatePart.PartNumber;
+            partToUpdate.Description = updatePart.Description;
+            partToUpdate.Quantity = updatePart.Quantity;
+            partToUpdate.Price = updatePart.Price;
+            partToUpdate.Location = updatePart.Location;
+
+            await dbContext.SaveChangesAsync();
+            return partToUpdate;
         }
         public Task<Part> DeleteSinglePartAsync(int id)
         {

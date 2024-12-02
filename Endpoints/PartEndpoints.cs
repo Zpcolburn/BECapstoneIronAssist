@@ -32,6 +32,12 @@ namespace BECapstoneIronAssist.Endpoints
                 var newPart = await partService.AddPartAsync(part);
                 return Results.Created($"/part/{newPart.Id}", newPart);
             });
+
+            //Put(Edit) Part
+            app.MapPut("/part/{id}", async (IPartService partService, int id, Part updatedPart) =>
+            {
+                return await partService.UpdateSinglePartAsync(id, updatedPart);
+            });
         }
     }
 }
