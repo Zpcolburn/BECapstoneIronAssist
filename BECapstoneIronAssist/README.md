@@ -45,7 +45,7 @@ For this project to run successfully, you'll need the following:
 Clone this repo using the following command in your terminal:
 
 ```bash
-git clone https://github.com/fmings/BEBourbonCollective.git
+git clone git@github.com:Zpcolburn/BECapstoneIronAssist.git
 ```
 
 ### 2. Install Required Packages
@@ -123,7 +123,7 @@ Launch the solution. Swagger should automatically launch and provide you with th
 
 Check out the [Iron AssistPostman Documentation](https://documenter.getpostman.com/view/39137419/2sAYBYhAwA) to learn more about the API routes and see examples of how each request and response should look.
 
-[Iron Assist Loom Video](https://www.loom.com/share/215711e4ab3945ae9329b145c7635350?sid=9c70b0ff-d60c-4a4c-ab04-941a4d41e3c3)
+[Iron Assist Loom Video](https://www.loom.com/share/757554624c7f42959a43b0767543f43b?sid=6b8e0df2-2c1b-4f52-868c-bd431fdc7cc9)
 
 ## 📋 Project Board
 
