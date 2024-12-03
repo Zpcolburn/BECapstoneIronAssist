@@ -124,6 +124,9 @@ Launch the solution. Swagger should automatically launch and provide you with th
 Check out the [Iron AssistPostman Documentation](https://documenter.getpostman.com/view/39137419/2sAYBYhAwA) to learn more about the API routes and see examples of how each request and response should look.
 
 [Iron Assist Loom Video](https://www.loom.com/share/757554624c7f42959a43b0767543f43b?sid=6b8e0df2-2c1b-4f52-868c-bd431fdc7cc9)
+[Iron Assist Loom Video](https://www.loom.com/share/4e932da4961447a4975d8f36451a6179?sid=59cd87d8-9881-47fd-aa6f-07ec02e6a56a)
+[Iron Assist Loom Video](https://www.loom.com/share/54388589d4594e89bd07e27dd91b70e3?sid=a3c79af4-e904-4493-8839-8997db1c836f)
+
 
 ## 📋 Project Board
 
